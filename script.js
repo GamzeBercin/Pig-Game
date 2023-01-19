@@ -82,7 +82,9 @@ btnHold.addEventListener('click', function () {
         .querySelector(`.player--${activePlayer}`)
         .classList.remove('player--active');
     } // switch user
-    else switchPlayer();
+    else if (currentScore !== 0) {
+      switchPlayer();
+    }
   }
 
   //
