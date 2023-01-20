@@ -37,7 +37,8 @@ main {
 }
 
 .player {
-  flex: 50%;
+  /* flex: 50%; */
+  width: 50%;
   padding: 9rem;
   display: flex;
   flex-direction: column;
@@ -100,10 +101,19 @@ main {
 }
 
 /* ABSOLUTE POSITIONED ELEMENTS */
-.btn {
+.btns {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.btn {
+  display: flex;
+  align-items: center;
   color: #444;
   background: none;
   border: none;
@@ -129,7 +139,7 @@ main {
   margin-right: 0.7rem;
 }
 
-.btn--new {
+/* .btn--new {
   top: 4rem;
 }
 .btn--roll {
@@ -137,10 +147,10 @@ main {
 }
 .btn--hold {
   top: 46.1rem;
-}
+} */
 
 .btn:active {
-  transform: translate(-50%, 3px);
+  transform: translateY(0.5rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
 }
 
@@ -151,7 +161,7 @@ main {
 .dice {
   position: absolute;
   left: 50%;
-  top: 16.5rem;
+  top: 6rem;
   transform: translateX(-50%);
   height: 10rem;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
@@ -167,4 +177,31 @@ main {
 }
 .hidden {
   display: none;
+}
+/* mobile style */
+@media only screen and (max-width: 992px) {
+  body {
+    padding: 30px 10px;
+  }
+  .player {
+    padding: 40px 10px;
+  }
+
+  .name {
+    font-size: 2rem;
+  }
+  .btns {
+    margin-top: 50px;
+  }
+  .btn {
+    padding: 5px 20px;
+    font-size: 15px;
+  }
+  .current {
+    padding: 10px 20px;
+    width: 100%;
+  }
+  .dice {
+    top: 16rem;
+  }
 }
